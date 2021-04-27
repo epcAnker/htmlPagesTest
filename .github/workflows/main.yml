@@ -34,6 +34,7 @@ jobs:
         run: |
           echo running PWD
           pwd
+          cp test.html html/test2.html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
