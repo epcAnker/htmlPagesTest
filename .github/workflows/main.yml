@@ -37,8 +37,18 @@ jobs:
           mkdir html
           cp test.html html/test2.html
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+      #- name: Deploy
+      #  uses: peaceiris/actions-gh-pages@v3
+      #  with:
+      #    github_token: ${{ secrets.GITHUB_TOKEN }}
+      #    publish_dir: ./html
+      - name: Pushes to another repository
+        uses: cpina/github-action-push-to-another-repository@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./html
+          source-directory: 'html'
+          destination-github-username: 'epcAnker'
+          destination-repository-name: 'NewPushRepoTest'
+          user-email: alex.anker@epcpower.com
+          target-branch: main
