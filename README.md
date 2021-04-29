@@ -1,2 +1,2 @@
 # htmlPagesTest
-Test Html Github Pages
+Test Html Github Page
