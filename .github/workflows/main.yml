@@ -63,10 +63,10 @@ jobs:
           git checkout main
           pwd
           
-          #cp ../generated.txt generated.txt
-          #git add .
-          #git commit -m "generated"
-          #git push
+          cp ../generated.txt generated.txt
+          git add .
+          git commit -m "generated"
+          git push
           
           #cp ../html/test2.html test2.html
           #git add test2.html
@@ -78,6 +78,6 @@ jobs:
           #git commit -m "updating GeneratedDox Ref"
           #git push
           cd ..
-          git add generated.txt
+          git add GeneratedDox
           git commit -m "gen"
           git push
