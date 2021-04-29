@@ -49,7 +49,7 @@ jobs:
           cd GeneratedDox
           git branch
           git checkout main
-          cp ../html/test.html GeneratedDox/test.html
+          cp ../html/test.html test.html
           git add test.html
           git commit -m "adding test"
           git push
