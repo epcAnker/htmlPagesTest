@@ -44,6 +44,7 @@ jobs:
       #name: push docs to docsreferences->submodule
       - uses: actions/checkout@v2
         with:
+          token: ${{ secrets.GitHub_PAT }}
           ref: DocsReferences
           submodules: 'true'
       - run: |
