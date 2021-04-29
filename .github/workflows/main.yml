@@ -37,19 +37,9 @@ jobs:
           mkdir html
           cp test.html html/test2.html
 
-      #- name: Deploy
-      #  uses: peaceiris/actions-gh-pages@v3
-      #  with:
-      #    github_token: ${{ secrets.GITHUB_TOKEN }}
-      #    publish_dir: ./html
-      - name: Pushes test file
-        uses: dmnemec/copy_file_to_another_repo_action@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
-        with:
-          source_file: 'html/test2.html'
-          destination_repo: 'epcAnker/NewPushRepoTest'
-          destination_folder: ''
-          user_email: 'alex.anker@epcpower.com'
-          user_name: 'epcAnker'
-          commit_message: 'A custom message for the commit'
+      - name: push docs to docsreferences->submodule
+        run: |
+          git checkout DocsReferences
+          git submodule update --init
+          ls
+          ls GeneratedDox
