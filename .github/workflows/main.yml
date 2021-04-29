@@ -41,6 +41,8 @@ jobs:
 
       - name: push docs to docsreferences->submodule
         run: |
+          git config --global user.name "Alex Anker"
+          git config --global user.email "alex.anker@epcpower.com"
           pwd
           git fetch
           git checkout DocsReferences
