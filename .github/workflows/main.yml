@@ -44,3 +44,5 @@ jobs:
           git submodule update --init
           ls
           ls GeneratedDox
+          cd GeneratedDox
+          git branch
