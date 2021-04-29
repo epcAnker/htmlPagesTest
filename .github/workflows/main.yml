@@ -47,7 +47,7 @@ jobs:
           ref: DocsReferences
           submodules: 'true'
           repository: epcAnker/GeneratedDox
-          token: ${{ secrets.GitHub_PAT }} # `GitHub_PAT` is a secret that contains your PAT
+          #token: ${{ secrets.GitHub_PAT }} # `GitHub_PAT` is a secret that contains your PAT
           path: my-tools
       - run: |
           pwd
