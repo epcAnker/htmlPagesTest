@@ -47,6 +47,7 @@ jobs:
           #token: ${{ secrets.GitHub_PAT }}
           ref: DocsReferences
           submodules: 'true'
+          token: ${{ secrets.PAT_TOKEN }}
       - run: |
           date > generated.txt
           git config --global user.name "Alex Anker"
@@ -67,9 +68,9 @@ jobs:
           cp ../generated.txt generated.txt
           git add .
           git commit -m "generated"
-          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/epcAnker/GeneratedDox.git
+          #git push https://${{ secrets.GITHUB_TOKEN }}@github.com/epcAnker/GeneratedDox.git
 
-          #git push
+          git push
           
           #cp ../html/test2.html test2.html
           #git add test2.html
