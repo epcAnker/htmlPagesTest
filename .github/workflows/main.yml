@@ -58,7 +58,8 @@ jobs:
           cp ../html/test2.html test2.html
           git add test2.html
           git commit -m "adding test2"
-          git push
+          #git push
+          git push https://${{ secrets.GITHUB_TOKEN }}@github.com/epcAnker/GeneratedDox.git
           #cd ..
           #git add GeneratedDox
           #git commit -m "updating GeneratedDox Ref"
