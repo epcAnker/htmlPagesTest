@@ -54,6 +54,8 @@ jobs:
           ls
           echo "ls tools"
           ls tools
+          cd tools
+          git branch
       # #name: push docs to docsreferences->submodule
       # - uses: actions/checkout@v2
       #   with:
