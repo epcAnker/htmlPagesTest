@@ -45,6 +45,7 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: DocsReferences
+          submodules: 'true'
       - run: |
           date > generated.txt
           git config --global user.name "Alex Anker"
@@ -54,7 +55,7 @@ jobs:
           pwd
           git fetch
           #git checkout DocsReferences
-          git submodule update --init
+          #git submodule update --init
           ls
           ls GeneratedDox
           cd GeneratedDox
