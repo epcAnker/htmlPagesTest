@@ -56,7 +56,7 @@ jobs:
           cp ../html/test2.html test2.html
           git add test2.html
           git commit -m "adding test2"
-          #git push
+          git push
           #cd ..
           #git add GeneratedDox
           #git commit -m "updating GeneratedDox Ref"
