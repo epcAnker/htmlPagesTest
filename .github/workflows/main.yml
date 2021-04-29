@@ -50,6 +50,8 @@ jobs:
           #token: ${{ secrets.GitHub_PAT }} # `GitHub_PAT` is a secret that contains your PAT
           path: tools
       - run: |
+          git config --global user.name "Alex Anker"
+          git config --global user.email "alex.anker@epcpower.com"
           pwd
           ls
           echo "ls tools"
