@@ -1,0 +1,3 @@
+[submodule "GeneratedDox"]
+	path = GeneratedDox
+	url = https://github.com/epcAnker/GeneratedDox.git
