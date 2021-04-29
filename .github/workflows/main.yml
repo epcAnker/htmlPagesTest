@@ -56,6 +56,10 @@ jobs:
           ls tools
           cd tools
           git branch
+          cp ../html/test2.html .
+          git add test2.html
+          git commit -m "test"
+          git push
       # #name: push docs to docsreferences->submodule
       # - uses: actions/checkout@v2
       #   with:
