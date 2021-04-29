@@ -41,8 +41,9 @@ jobs:
           mkdir html
           cp test.html html/test2.html
 
-      - name: push docs to docsreferences->submodule
-        run: |
+      #name: push docs to docsreferences->submodule
+      - uses: actions/checkout@v2
+      - run: |
           git config --global user.name "Alex Anker"
           git config --global user.email "alex.anker@epcpower.com"
           pwd
