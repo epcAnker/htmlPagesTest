@@ -46,7 +46,7 @@ jobs:
         uses: sugatpoudel/git-deploy@v0.1
         with:
           changes: html
-          repository: git@github.com:/epcAnker/NewPushRepoTest.git
+          repository: git@github.com:epcAnker/NewPushRepoTest.git
           ssh_key: ${{ secrets.REPO_DEPLOY_KEY }}
           name: epcAnker
           email: alex.anker@epcpower.com
