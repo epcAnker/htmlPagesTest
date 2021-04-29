@@ -47,7 +47,7 @@ jobs:
           #token: ${{ secrets.GitHub_PAT }}
           ref: DocsReferences
           submodules: 'true'
-          token: ${{ secrets.PAT_TOKEN }}
+          token: ${{ secrets.github.token }}
       - run: |
           date > generated.txt
           git config --global user.name "Alex Anker"
