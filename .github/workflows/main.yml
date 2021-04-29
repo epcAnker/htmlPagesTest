@@ -49,7 +49,7 @@ jobs:
           repository: epcAnker/GeneratedDox
           token: ${{ secrets.GitHub_PAT }} # `GitHub_PAT` is a secret that contains your PAT
           path: my-tools
-        run: |
+      - run: |
           pwd
           ls
       # #name: push docs to docsreferences->submodule
