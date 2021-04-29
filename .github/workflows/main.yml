@@ -39,6 +39,7 @@ jobs:
 
       - name: push docs to docsreferences->submodule
         run: |
+          git fetch
           git checkout DocsReferences
           git submodule update --init
           ls
