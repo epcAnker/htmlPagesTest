@@ -42,16 +42,11 @@ jobs:
       #  with:
       #    github_token: ${{ secrets.GITHUB_TOKEN }}
       #    publish_dir: ./html
-      - name: Pushes to another repository
-        id: push_directory
-        uses: cpina/github-action-push-to-another-repository@main
-        env:
-          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      - name: deploy changes to a repo
+        uses: sugatpoudel/git-deploy@v0.1
         with:
-          source-directory: 'html'
-          destination-github-username: 'epcAnker'
-          destination-repository-username: 'epcAnker'
-          destination-repository-name: 'NewPushRepoTest'
-          user-email: alex.anker@epcpower.com
-          commit-message: See ORIGIN_COMMIT from $GITHUB_REF
-          target-branch: main
+          changes: html
+          repository: git@github.com:/epcAnker/NewPushRepoTest.git
+          ssh_key: ${{ secrets.REPO_DEPLOY_KEY }}
+          name: epcAnker
+          email: alex.anker@epcpower.com
