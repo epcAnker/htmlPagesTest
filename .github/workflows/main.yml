@@ -43,6 +43,8 @@ jobs:
 
       #name: push docs to docsreferences->submodule
       - uses: actions/checkout@v2
+        with:
+          ref: DocsReferences
       - run: |
           date > generated.txt
           git config --global user.name "Alex Anker"
@@ -51,7 +53,7 @@ jobs:
           git config user.email "alex.anker@epcpower.com"
           pwd
           git fetch
-          git checkout DocsReferences
+          #git checkout DocsReferences
           git submodule update --init
           ls
           ls GeneratedDox
