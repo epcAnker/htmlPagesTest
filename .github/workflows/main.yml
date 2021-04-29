@@ -56,10 +56,9 @@ jobs:
           ls
           echo "ls tools"
           ls tools
-          cd tools
           git branch
-          cp ../html/test2.html .
-          git add test2.html
+          date > generated.txt
+          git add .
           git commit -m "test"
           git push
       # #name: push docs to docsreferences->submodule
