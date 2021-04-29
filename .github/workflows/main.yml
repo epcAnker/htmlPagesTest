@@ -41,47 +41,58 @@ jobs:
           mkdir html
           cp test.html html/test2.html
 
-      #name: push docs to docsreferences->submodule
-      - uses: actions/checkout@v2
-        with:
-          #token: ${{ secrets.GitHub_PAT }}
-          ref: DocsReferences
-          submodules: 'true'
-          token: ${{ secrets.github.token }}
-      - run: |
-          date > generated.txt
-          git config --global user.name "Alex Anker"
-          git config --global user.email "alex.anker@epcpower.com"
-          git config user.name "Alex Anker"
-          git config user.email "alex.anker@epcpower.com"
-          pwd
-          git fetch
-          #git checkout DocsReferences
-          #git submodule update --init
-          ls
-          ls GeneratedDox
-          cd GeneratedDox
-          git branch
-          git checkout main
-          pwd
+       - uses: actions/checkout@v2
+         with:
+           #token: ${{ secrets.GitHub_PAT }}
+           ref: DocsReferences
+           submodules: 'true'
+           repository: epcAnker/GeneratedDox
+           token: ${{ secrets.GitHub_PAT }} # `GitHub_PAT` is a secret that contains your PAT
+           path: my-tools
+        run: |
+           pwd
+           ls
+      # #name: push docs to docsreferences->submodule
+      # - uses: actions/checkout@v2
+      #   with:
+      #     #token: ${{ secrets.GitHub_PAT }}
+      #     ref: DocsReferences
+      #     submodules: 'true'
+      #     token: ${{ secrets.github.token }}
+      # - run: |
+      #     date > generated.txt
+      #     git config --global user.name "Alex Anker"
+      #     git config --global user.email "alex.anker@epcpower.com"
+      #     git config user.name "Alex Anker"
+      #     git config user.email "alex.anker@epcpower.com"
+      #     pwd
+      #     git fetch
+      #     #git checkout DocsReferences
+      #     #git submodule update --init
+      #     ls
+      #     ls GeneratedDox
+      #     cd GeneratedDox
+      #     git branch
+      #     git checkout main
+      #     pwd
           
-          cp ../generated.txt generated.txt
-          git add .
-          git commit -m "generated"
-          #git push https://${{ secrets.GITHUB_TOKEN }}@github.com/epcAnker/GeneratedDox.git
+      #     cp ../generated.txt generated.txt
+      #     git add .
+      #     git commit -m "generated"
+      #     #git push https://${{ secrets.GITHUB_TOKEN }}@github.com/epcAnker/GeneratedDox.git
 
-          git push
+      #     git push
           
-          #cp ../html/test2.html test2.html
-          #git add test2.html
-          #git commit -m "adding test2"
-          #git push
-          #git push https://${{ secrets.GITHUB_TOKEN }}@github.com/epcAnker/GeneratedDox.git
-          #cd ..
-          #git add GeneratedDox
-          #git commit -m "updating GeneratedDox Ref"
-          #git push
-          cd ..
-          git add GeneratedDox
-          git commit -m "gen"
-          git push
+      #     #cp ../html/test2.html test2.html
+      #     #git add test2.html
+      #     #git commit -m "adding test2"
+      #     #git push
+      #     #git push https://${{ secrets.GITHUB_TOKEN }}@github.com/epcAnker/GeneratedDox.git
+      #     #cd ..
+      #     #git add GeneratedDox
+      #     #git commit -m "updating GeneratedDox Ref"
+      #     #git push
+      #     cd ..
+      #     git add GeneratedDox
+      #     git commit -m "gen"
+      #     git push
